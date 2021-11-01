@@ -18,7 +18,7 @@ void quick_sort2(int *array, int first, int last, size_t size)
 
 	for (i = first; i < last; i++)
 	{
-		if (pivot_num > array[i])
+		if (pivot_num >= array[i])
 		{
 			if (i != j)
 			{
@@ -53,5 +53,8 @@ void quick_sort2(int *array, int first, int last, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
+	if (size < 2)
+		return;
+
 	quick_sort2(array, 0, size - 1, size);
 }
